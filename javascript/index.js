@@ -79,5 +79,6 @@ function clearForm() {
 }
 function deleteItem(idx) {
   allSitesArr.splice(idx, 1);
+   localStorage.setItem("webSites", JSON.stringify(allSitesArr));
   displaySites();
 }
