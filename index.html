@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="m-auto mb-5 position-relative">Bookmarker</h1>
+    <div class="container main">
+      <h2>
+        <i class="fas fa-bookmark"></i>
+        Bookmark your favorite sites
+        <i class="fas fa-bookmark"></i>
+      </h2>
+      <label for="name" class="fw-bold my-2"
+        ><i class="fas fa-book me-2"></i>Site Name:</label
+      >
+      <input
+        type="text"
+        id="name"
+        placeholder="Bookmark Name"
+        class="form-control"
+      />
+      <label for="URL" class="fw-bold my-2"
+        ><i class="fas fa-link me-2"></i> Site URL:</label
+      >
+      <input
+        type="text"
+        id="URL"
+        placeholder="Website URL"
+        class="form-control"
+      />
+      <button
+        class="btn btn-danger my-4 mx-auto d-block px-5 py-2 fw-semibold"
+        onclick="addSite()"
+      >
+        Submit
+      </button>
+    </div>
+    <div class="container">
+      <table class="table text-center bg-light mt-4">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Website name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tableContent"></tbody>
+      </table>
+    </div>
+
+    <script src="javascript/bootstrap.bundle.min.js"></script>
+    <!-- <script src="javascript/all.min.js"></script> -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="javascript/index.js"></script>
+  </body>
+</html>
