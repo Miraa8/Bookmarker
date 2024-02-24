@@ -79,8 +79,27 @@ function clearForm() {
   webName.value = "";
   webURL.value = "";
 }
+
 function deleteItem(idx) {
-  allSitesArr.splice(idx, 1);
-  localStorage.setItem("webSites", JSON.stringify(allSitesArr));
-  displaySites();
+  // Show confirmation alert
+  swal({
+    title: "Are you sure?",
+    text: "Once deleted, you will not be able to recover this bookmark!",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  }).then((willDelete) => {
+    if (willDelete) {
+      allSitesArr.splice(idx, 1);
+      localStorage.setItem("webSites", JSON.stringify(allSitesArr));
+      displaySites();
+      swal("Poof! Your bookmark has been deleted!", {
+        icon: "success",
+      });
+    } else {
+      swal("Your bookmark is safe!", {
+        icon: "info",
+      });
+    }
+  });
 }
